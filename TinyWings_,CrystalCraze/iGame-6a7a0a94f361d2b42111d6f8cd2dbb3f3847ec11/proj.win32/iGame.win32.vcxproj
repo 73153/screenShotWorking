@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7DE2AF57-8CEA-4652-896F-B265F03EFE09}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)cocos2dx;$(SolutionDir)cocos2dx\include;$(SolutionDir)cocos2dx\kazmath\include;$(SolutionDir)cocos2dx\platform\win32;$(SolutionDir)cocos2dx\platform\third_party\win32;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)CocosDenshion\include;$(SolutionDir)extensions;$(SolutionDir)external\sqlite3\include;$(ProjectDir)..\library\jsoncpp\include;$(ProjectDir)..\library\JsonBox\include;$(ProjectDir)..\library\jsonconverter;$(ProjectDir)..\Classes\Common;$(ProjectDir)..\library\XmlParser;$(ProjectDir)..\Classes\UILibrary;$(ProjectDir)..\Classes\UILibrary\CCActivityIndicator;$(ProjectDir)..\Classes\Task;$(ProjectDir)..\Classes\Other;$(ProjectDir)..\Classes\Mail;$(ProjectDir)..\Classes\Login;$(ProjectDir)..\Classes\Friends;$(ProjectDir)..\Classes\Chat;$(ProjectDir)..\library\gloox;$(ProjectDir)..\Classes\Battle;$(ProjectDir)..\library\ccnet;$(ProjectDir)..\Classes\Card;$(ProjectDir)..\Classes\main;$(ProjectDir)..\Classes\Package;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcocos2d.lib;opengl32.lib;glew32.lib;libCocosDenshion.lib;libExtensions.lib;libcurl_imp.lib;pthreadVCE2.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>iGame.h</HeaderFileName>
+      <InterfaceIdentifierFileName>iGame_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>iGame_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/iGame.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)cocos2dx;$(SolutionDir)cocos2dx\include;$(SolutionDir)cocos2dx\kazmath\include;$(SolutionDir)cocos2dx\platform\win32;$(SolutionDir)cocos2dx\platform\third_party\win32;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)CocosDenshion\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcocos2d.lib;opengl32.lib;glew32.lib;libCocosDenshion.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>iGame.h</HeaderFileName>
+      <InterfaceIdentifierFileName>iGame_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>iGame_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/iGame.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator.plist" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator.png" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_1.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_10.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_11.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_12.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_2.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_3.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_4.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_5.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_6.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_7.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_8.gif" />
+    <None Include="..\Classes\UILibrary\CCActivityIndicator\Resources\ccactivityindicator_9.gif" />
+    <None Include="..\library\gloox\config.h.unix" />
+    <None Include="..\library\gloox\config.h.win" />
+    <None Include="..\library\gloox\Makefile.in" />
+    <None Include="..\Resources\background.jpeg" />
+    <None Include="..\Resources\data\card.s3db" />
+    <None Include="..\Resources\Default.png" />
+    <None Include="..\Resources\font\JDJYCHAO.TTF" />
+    <None Include="..\Resources\font\Marker Felt.ttf" />
+    <None Include="..\Resources\font\resources-iphonehd\btn.fnt" />
+    <None Include="..\Resources\font\resources-iphonehd\btn.png" />
+    <None Include="..\Resources\font\resources-iphone\btn.fnt" />
+    <None Include="..\Resources\font\resources-iphone\btn.png" />
+    <None Include="..\Resources\font\simhei.ttf" />
+    <None Include="..\Resources\font\test.fnt" />
+    <None Include="..\Resources\font\test.png" />
+    <None Include="..\Resources\Icon%402x.png" />
+    <None Include="..\Resources\Icon-72.png" />
+    <None Include="..\Resources\Icon-Small%402x.png" />
+    <None Include="..\Resources\Icon-Small-50.png" />
+    <None Include="..\Resources\Icon-Small.png" />
+    <None Include="..\Resources\Icon.png" />
+    <None Include="..\Resources\Image\card.plist" />
+    <None Include="..\Resources\Image\card.png" />
+    <None Include="..\Resources\Image\friends.plist" />
+    <None Include="..\Resources\Image\friends.png" />
+    <None Include="..\Resources\Image\login.plist" />
+    <None Include="..\Resources\Image\login.png" />
+    <None Include="..\Resources\Image\main.plist" />
+    <None Include="..\Resources\Image\main.png" />
+    <None Include="..\Resources\Image\resources-iphonehd\card.plist" />
+    <None Include="..\Resources\Image\resources-iphonehd\card.png" />
+    <None Include="..\Resources\Image\resources-iphonehd\friends.plist" />
+    <None Include="..\Resources\Image\resources-iphonehd\friends.png" />
+    <None Include="..\Resources\Image\resources-iphonehd\login.plist" />
+    <None Include="..\Resources\Image\resources-iphonehd\login.png" />
+    <None Include="..\Resources\Image\resources-iphonehd\main.plist" />
+    <None Include="..\Resources\Image\resources-iphonehd\main.png" />
+    <None Include="..\Resources\language\chs.plist" />
+    <None Include="..\Resources\particle\ccbParticleStars.png" />
+    <None Include="..\Resources\particle\ellipse.plist" />
+    <None Include="..\Resources\particle\ellipse.png" />
+    <None Include="..\Resources\particle\explore1.plist" />
+    <None Include="..\Resources\particle\fire.plist" />
+    <None Include="..\Resources\particle\fire.png" />
+    <None Include="..\Resources\particle\flash.plist" />
+    <None Include="..\Resources\particle\flash.png" />
+    <None Include="..\Resources\particle\line.png" />
+    <None Include="..\Resources\particle\myAttack1.plist" />
+    <None Include="..\Resources\particle\particle-fire.png" />
+    <None Include="..\Resources\particle\particle-smoke.png" />
+    <None Include="..\Resources\particle\particle-snow.png" />
+    <None Include="..\Resources\particle\particle-stars.png" />
+    <None Include="..\Resources\particle\particleTexture.png" />
+    <None Include="..\Resources\scene\AddFriendScene.ccbi" />
+    <None Include="..\Resources\scene\CharacterScene.ccbi" />
+    <None Include="..\Resources\scene\ChatLayer.ccbi" />
+    <None Include="..\Resources\scene\FriendListScene.ccbi" />
+    <None Include="..\Resources\scene\LoginScene.ccbi" />
+    <None Include="..\Resources\scene\MailMainScene.ccbi" />
+    <None Include="..\Resources\scene\MainGameScene.ccbi" />
+    <None Include="..\Resources\scene\MainInnerLayer.ccbi" />
+    <None Include="..\Resources\scene\MainOuterLayer.ccbi" />
+    <None Include="..\Resources\scene\MDCardAlchemyLayer.ccbi" />
+    <None Include="..\Resources\scene\MDCatalogueLayer.ccbi" />
+    <None Include="..\Resources\scene\MDHeroDetailLayer.ccbi" />
+    <None Include="..\Resources\scene\MDHeroListLayer.ccbi" />
+    <None Include="..\Resources\scene\MDHeroMainLayer.ccbi" />
+    <None Include="..\Resources\scene\MDHeroPrePromoLayer.ccbi" />
+    <None Include="..\Resources\scene\MDHeroPromoLayer.ccbi" />
+    <None Include="..\Resources\scene\MDHerosFormationLayer.ccbi" />
+    <None Include="..\Resources\scene\MDPackageLayer.ccbi" />
+    <None Include="..\Resources\scene\MDSettingLayer.ccbi" />
+    <None Include="..\Resources\scene\NewMailScene.ccbi" />
+    <None Include="..\Resources\scene\RegisterScene.ccbi" />
+    <None Include="..\Resources\scene\ServerListScene.ccbi" />
+    <None Include="..\Resources\scene\TaskBoxScene.ccbi" />
+    <None Include="..\Resources\scene\TaskDetailScene.ccbi" />
+    <None Include="..\Resources\scene\TaskListScene.ccbi" />
+    <None Include="..\Resources\scene\TaskRewardScene.ccbi" />
+    <None Include="..\Resources\scene\ThirdLoginScene.ccbi" />
+    <None Include="..\Resources\scene\UserMailScene.ccbi" />
+    <None Include="..\Resources\Task\Card1.plist" />
+    <None Include="..\Resources\Task\Task1.plist" />
+    <None Include="..\Resources\transparent.png" />
+    <None Include="res\iGame.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="iGame.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Battle\MDBattleLayer.h" />
+    <ClInclude Include="..\Classes\Battle\MDBattleLayerLoader.h" />
+    <ClInclude Include="..\Classes\Battle\MDCardPlayer.h" />
+    <ClInclude Include="..\Classes\Card\MDCardAlchemyLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDCardAlchemyLayerLoader.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroDetailLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroDetailLayerLoader.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroListLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroListLayerLoader.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroMainLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroMainLayerLoader.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroPrePromoLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroPrePromoLayerLoader.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroPromoLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDHeroPromoLayerLoader.h" />
+    <ClInclude Include="..\Classes\Card\MDHerosFormationLayer.h" />
+    <ClInclude Include="..\Classes\Card\MDHerosFormationLayerLoader.h" />
+    <ClInclude Include="..\Classes\Chat\ChatLayer.h" />
+    <ClInclude Include="..\Classes\Chat\ChatLayerLoader.h" />
+    <ClInclude Include="..\Classes\Common\common.h" />
+    <ClInclude Include="..\Classes\Common\GlobalData.h" />
+    <ClInclude Include="..\Classes\Common\MainLayerBase.h" />
+    <ClInclude Include="..\Classes\Common\MDDefine.h" />
+    <ClInclude Include="..\Classes\Common\MDMessageCenter.h" />
+    <ClInclude Include="..\Classes\Common\StringExt.h" />
+    <ClInclude Include="..\Classes\Friends\AddFriendScene.h" />
+    <ClInclude Include="..\Classes\Friends\AddFriendSceneLoader.h" />
+    <ClInclude Include="..\Classes\Friends\FriendListScene.h" />
+    <ClInclude Include="..\Classes\Friends\FriendListSceneLoader.h" />
+    <ClInclude Include="..\Classes\Login\CharacterScene.h" />
+    <ClInclude Include="..\Classes\Login\CharacterSceneLoader.h" />
+    <ClInclude Include="..\Classes\Login\LoginScene.h" />
+    <ClInclude Include="..\Classes\Login\LoginSceneLoader.h" />
+    <ClInclude Include="..\Classes\Login\RegisterScene.h" />
+    <ClInclude Include="..\Classes\Login\RegisterSceneLoader.h" />
+    <ClInclude Include="..\Classes\Login\ServerListScene.h" />
+    <ClInclude Include="..\Classes\Login\ServerListSceneLoader.h" />
+    <ClInclude Include="..\Classes\Login\ThirdLoginScene.h" />
+    <ClInclude Include="..\Classes\Login\ThirdLoginSceneLoader.h" />
+    <ClInclude Include="..\Classes\Mail\MailListScene.h" />
+    <ClInclude Include="..\Classes\Mail\MailListSceneLoader.h" />
+    <ClInclude Include="..\Classes\Mail\MailMainScene.h" />
+    <ClInclude Include="..\Classes\Mail\MailMainSceneLoader.h" />
+    <ClInclude Include="..\Classes\Mail\NewMailScene.h" />
+    <ClInclude Include="..\Classes\Mail\NewMailSceneLoader.h" />
+    <ClInclude Include="..\Classes\Mail\SysMailListScene.h" />
+    <ClInclude Include="..\Classes\MainGameScene.h" />
+    <ClInclude Include="..\Classes\MainGameSceneLoader.h" />
+    <ClInclude Include="..\Classes\main\MainInnerLayer.h" />
+    <ClInclude Include="..\Classes\main\MainInnerLayerLoader.h" />
+    <ClInclude Include="..\Classes\main\MainOuterLayer.h" />
+    <ClInclude Include="..\Classes\main\MainOuterLayerLoader.h" />
+    <ClInclude Include="..\Classes\Other\AboutScene.h" />
+    <ClInclude Include="..\Classes\Other\AboutSceneLoader.h" />
+    <ClInclude Include="..\Classes\Other\CCControlSwitchLoader.h" />
+    <ClInclude Include="..\Classes\Other\CCEditBoxLoader.h" />
+    <ClInclude Include="..\Classes\Other\CCTableViewLoader.h" />
+    <ClInclude Include="..\Classes\Other\MDCatalogueLayer.h" />
+    <ClInclude Include="..\Classes\Other\MDCatalogueLayerLoader.h" />
+    <ClInclude Include="..\Classes\Other\MDSettingLayer.h" />
+    <ClInclude Include="..\Classes\Other\MDSettingLayerLoader.h" />
+    <ClInclude Include="..\Classes\Package\MDPackageLayer.h" />
+    <ClInclude Include="..\Classes\Package\MDPackageLayerLoader.h" />
+    <ClInclude Include="..\Classes\Task\MDTaskBoxLayer.h" />
+    <ClInclude Include="..\Classes\Task\MDTaskBoxLayerLoader.h" />
+    <ClInclude Include="..\Classes\Task\TaskDetailScene.h" />
+    <ClInclude Include="..\Classes\Task\TaskDetailSceneLoader.h" />
+    <ClInclude Include="..\Classes\Task\TaskListScene.h" />
+    <ClInclude Include="..\Classes\Task\TaskListSceneLoader.h" />
+    <ClInclude Include="..\Classes\Task\TaskRewardScene.h" />
+    <ClInclude Include="..\Classes\Task\TaskRewardSceneLoader.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCActivityIndicator\CCActivityIndicator.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCGestureRecognizer\CCGestureRecognizer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCGestureRecognizer\CCLongPressGestureRecognizer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCGestureRecognizer\CCPanGestureRecognizer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCGestureRecognizer\CCPinchGestureRecognizer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCGestureRecognizer\CCSwipeGestureRecognizer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCGestureRecognizer\CCTapGestureRecognizer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCMessageDialog.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCMultiColumnTableView.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCProgressLayer\CCProgressLayer.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCShake.h" />
+    <ClInclude Include="..\Classes\UILibrary\CCTabView.h" />
+    <ClInclude Include="..\Classes\UILibrary\EllipseActionInterval.h" />
+    <ClInclude Include="..\Classes\UILibrary\LoadingScene.h" />
+    <ClInclude Include="..\Classes\UILibrary\MDProgressBar.h" />
+    <ClInclude Include="..\Classes\UILibrary\SharpLabelTTF.h" />
+    <ClInclude Include="..\Classes\UILibrary\SlidingMenu.h" />
+    <ClInclude Include="..\library\ccnet\inetaddress.h" />
+    <ClInclude Include="..\library\ccnet\inetpredef.h" />
+    <ClInclude Include="..\library\ccnet\net.h" />
+    <ClInclude Include="..\library\ccnet\netbean.h" />
+    <ClInclude Include="..\library\ccnet\socket.h" />
+    <ClInclude Include="..\library\ccnet\stream.h" />
+    <ClInclude Include="..\library\gloox\adhoc.h" />
+    <ClInclude Include="..\library\gloox\adhoccommandprovider.h" />
+    <ClInclude Include="..\library\gloox\adhochandler.h" />
+    <ClInclude Include="..\library\gloox\amp.h" />
+    <ClInclude Include="..\library\gloox\annotations.h" />
+    <ClInclude Include="..\library\gloox\annotationshandler.h" />
+    <ClInclude Include="..\library\gloox\atomicrefcount.h" />
+    <ClInclude Include="..\library\gloox\attention.h" />
+    <ClInclude Include="..\library\gloox\base64.h" />
+    <ClInclude Include="..\library\gloox\bookmarkhandler.h" />
+    <ClInclude Include="..\library\gloox\bookmarkstorage.h" />
+    <ClInclude Include="..\library\gloox\bytestream.h" />
+    <ClInclude Include="..\library\gloox\bytestreamdatahandler.h" />
+    <ClInclude Include="..\library\gloox\bytestreamhandler.h" />
+    <ClInclude Include="..\library\gloox\capabilities.h" />
+    <ClInclude Include="..\library\gloox\chatstate.h" />
+    <ClInclude Include="..\library\gloox\chatstatefilter.h" />
+    <ClInclude Include="..\library\gloox\chatstatehandler.h" />
+    <ClInclude Include="..\library\gloox\client.h" />
+    <ClInclude Include="..\library\gloox\clientbase.h" />
+    <ClInclude Include="..\library\gloox\component.h" />
+    <ClInclude Include="..\library\gloox\compressionbase.h" />
+    <ClInclude Include="..\library\gloox\compressiondatahandler.h" />
+    <ClInclude Include="..\library\gloox\compressiondefault.h" />
+    <ClInclude Include="..\library\gloox\compressionzlib.h" />
+    <ClInclude Include="..\library\gloox\config.h" />
+    <ClInclude Include="..\library\gloox\connectionbase.h" />
+    <ClInclude Include="..\library\gloox\connectionbosh.h" />
+    <ClInclude Include="..\library\gloox\connectiondatahandler.h" />
+    <ClInclude Include="..\library\gloox\connectionhandler.h" />
+    <ClInclude Include="..\library\gloox\connectionhttpproxy.h" />
+    <ClInclude Include="..\library\gloox\connectionlistener.h" />
+    <ClInclude Include="..\library\gloox\connectionsocks5proxy.h" />
+    <ClInclude Include="..\library\gloox\connectiontcpbase.h" />
+    <ClInclude Include="..\library\gloox\connectiontcpclient.h" />
+    <ClInclude Include="..\library\gloox\connectiontcpserver.h" />
+    <ClInclude Include="..\library\gloox\connectiontls.h" />
+    <ClInclude Include="..\library\gloox\connectiontlsserver.h" />
+    <ClInclude Include="..\library\gloox\dataform.h" />
+    <ClInclude Include="..\library\gloox\dataformfield.h" />
+    <ClInclude Include="..\library\gloox\dataformfieldcontainer.h" />
+    <ClInclude Include="..\library\gloox\dataformitem.h" />
+    <ClInclude Include="..\library\gloox\dataformreported.h" />
+    <ClInclude Include="..\library\gloox\delayeddelivery.h" />
+    <ClInclude Include="..\library\gloox\disco.h" />
+    <ClInclude Include="..\library\gloox\discohandler.h" />
+    <ClInclude Include="..\library\gloox\disconodehandler.h" />
+    <ClInclude Include="..\library\gloox\dns.h" />
+    <ClInclude Include="..\library\gloox\error.h" />
+    <ClInclude Include="..\library\gloox\event.h" />
+    <ClInclude Include="..\library\gloox\eventdispatcher.h" />
+    <ClInclude Include="..\library\gloox\eventhandler.h" />
+    <ClInclude Include="..\library\gloox\featureneg.h" />
+    <ClInclude Include="..\library\gloox\flexoff.h" />
+    <ClInclude Include="..\library\gloox\flexoffhandler.h" />
+    <ClInclude Include="..\library\gloox\gloox.h" />
+    <ClInclude Include="..\library\gloox\glooxversion.h" />
+    <ClInclude Include="..\library\gloox\gpgencrypted.h" />
+    <ClInclude Include="..\library\gloox\gpgsigned.h" />
+    <ClInclude Include="..\library\gloox\inbandbytestream.h" />
+    <ClInclude Include="..\library\gloox\instantmucroom.h" />
+    <ClInclude Include="..\library\gloox\iq.h" />
+    <ClInclude Include="..\library\gloox\iqhandler.h" />
+    <ClInclude Include="..\library\gloox\jid.h" />
+    <ClInclude Include="..\library\gloox\lastactivity.h" />
+    <ClInclude Include="..\library\gloox\lastactivityhandler.h" />
+    <ClInclude Include="..\library\gloox\linklocal.h" />
+    <ClInclude Include="..\library\gloox\linklocalclient.h" />
+    <ClInclude Include="..\library\gloox\linklocalhandler.h" />
+    <ClInclude Include="..\library\gloox\linklocalmanager.h" />
+    <ClInclude Include="..\library\gloox\loghandler.h" />
+    <ClInclude Include="..\library\gloox\logsink.h" />
+    <ClInclude Include="..\library\gloox\macros.h" />
+    <ClInclude Include="..\library\gloox\md5.h" />
+    <ClInclude Include="..\library\gloox\message.h" />
+    <ClInclude Include="..\library\gloox\messageevent.h" />
+    <ClInclude Include="..\library\gloox\messageeventfilter.h" />
+    <ClInclude Include="..\library\gloox\messageeventhandler.h" />
+    <ClInclude Include="..\library\gloox\messagefilter.h" />
+    <ClInclude Include="..\library\gloox\messagehandler.h" />
+    <ClInclude Include="..\library\gloox\messagesession.h" />
+    <ClInclude Include="..\library\gloox\messagesessionhandler.h" />
+    <ClInclude Include="..\library\gloox\mucinvitationhandler.h" />
+    <ClInclude Include="..\library\gloox\mucmessagesession.h" />
+    <ClInclude Include="..\library\gloox\mucroom.h" />
+    <ClInclude Include="..\library\gloox\mucroomconfighandler.h" />
+    <ClInclude Include="..\library\gloox\mucroomhandler.h" />
+    <ClInclude Include="..\library\gloox\mutex.h" />
+    <ClInclude Include="..\library\gloox\mutexguard.h" />
+    <ClInclude Include="..\library\gloox\nickname.h" />
+    <ClInclude Include="..\library\gloox\nonsaslauth.h" />
+    <ClInclude Include="..\library\gloox\oob.h" />
+    <ClInclude Include="..\library\gloox\parser.h" />
+    <ClInclude Include="..\library\gloox\prep.h" />
+    <ClInclude Include="..\library\gloox\presence.h" />
+    <ClInclude Include="..\library\gloox\presencehandler.h" />
+    <ClInclude Include="..\library\gloox\privacyitem.h" />
+    <ClInclude Include="..\library\gloox\privacylisthandler.h" />
+    <ClInclude Include="..\library\gloox\privacymanager.h" />
+    <ClInclude Include="..\library\gloox\privatexml.h" />
+    <ClInclude Include="..\library\gloox\privatexmlhandler.h" />
+    <ClInclude Include="..\library\gloox\pubsub.h" />
+    <ClInclude Include="..\library\gloox\pubsubevent.h" />
+    <ClInclude Include="..\library\gloox\pubsubitem.h" />
+    <ClInclude Include="..\library\gloox\pubsubmanager.h" />
+    <ClInclude Include="..\library\gloox\pubsubresulthandler.h" />
+    <ClInclude Include="..\library\gloox\receipt.h" />
+    <ClInclude Include="..\library\gloox\registration.h" />
+    <ClInclude Include="..\library\gloox\registrationhandler.h" />
+    <ClInclude Include="..\library\gloox\resource.h" />
+    <ClInclude Include="..\library\gloox\rosteritem.h" />
+    <ClInclude Include="..\library\gloox\rosteritemdata.h" />
+    <ClInclude Include="..\library\gloox\rosterlistener.h" />
+    <ClInclude Include="..\library\gloox\rostermanager.h" />
+    <ClInclude Include="..\library\gloox\search.h" />
+    <ClInclude Include="..\library\gloox\searchhandler.h" />
+    <ClInclude Include="..\library\gloox\sha.h" />
+    <ClInclude Include="..\library\gloox\shim.h" />
+    <ClInclude Include="..\library\gloox\sihandler.h" />
+    <ClInclude Include="..\library\gloox\simanager.h" />
+    <ClInclude Include="..\library\gloox\siprofileft.h" />
+    <ClInclude Include="..\library\gloox\siprofilefthandler.h" />
+    <ClInclude Include="..\library\gloox\siprofilehandler.h" />
+    <ClInclude Include="..\library\gloox\socks5bytestream.h" />
+    <ClInclude Include="..\library\gloox\socks5bytestreammanager.h" />
+    <ClInclude Include="..\library\gloox\socks5bytestreamserver.h" />
+    <ClInclude Include="..\library\gloox\softwareversion.h" />
+    <ClInclude Include="..\library\gloox\stanza.h" />
+    <ClInclude Include="..\library\gloox\stanzaextension.h" />
+    <ClInclude Include="..\library\gloox\stanzaextensionfactory.h" />
+    <ClInclude Include="..\library\gloox\statisticshandler.h" />
+    <ClInclude Include="..\library\gloox\subscription.h" />
+    <ClInclude Include="..\library\gloox\subscriptionhandler.h" />
+    <ClInclude Include="..\library\gloox\tag.h" />
+    <ClInclude Include="..\library\gloox\taghandler.h" />
+    <ClInclude Include="..\library\gloox\tlsbase.h" />
+    <ClInclude Include="..\library\gloox\tlsdefault.h" />
+    <ClInclude Include="..\library\gloox\tlsgnutlsbase.h" />
+    <ClInclude Include="..\library\gloox\tlsgnutlsclient.h" />
+    <ClInclude Include="..\library\gloox\tlsgnutlsclientanon.h" />
+    <ClInclude Include="..\library\gloox\tlsgnutlsserveranon.h" />
+    <ClInclude Include="..\library\gloox\tlshandler.h" />
+    <ClInclude Include="..\library\gloox\tlsopensslbase.h" />
+    <ClInclude Include="..\library\gloox\tlsopensslclient.h" />
+    <ClInclude Include="..\library\gloox\tlsopensslserver.h" />
+    <ClInclude Include="..\library\gloox\tlsschannel.h" />
+    <ClInclude Include="..\library\gloox\uniquemucroom.h" />
+    <ClInclude Include="..\library\gloox\util.h" />
+    <ClInclude Include="..\library\gloox\vcard.h" />
+    <ClInclude Include="..\library\gloox\vcardhandler.h" />
+    <ClInclude Include="..\library\gloox\vcardmanager.h" />
+    <ClInclude Include="..\library\gloox\vcardupdate.h" />
+    <ClInclude Include="..\library\gloox\xhtmlim.h" />
+    <ClInclude Include="..\library\jsonconverter\CCJSONConverter.h" />
+    <ClInclude Include="..\library\jsonconverter\CCJSONData.h" />
+    <ClInclude Include="..\library\jsonconverter\cJSON.h" />
+    <ClInclude Include="..\library\XmlParser\XmlParser.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\Battle\MDBattleLayer.cpp" />
+    <ClCompile Include="..\Classes\Battle\MDCardPlayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDCardAlchemyLayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDHeroDetailLayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDHeroListLayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDHeroMainLayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDHeroPrePromoLayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDHeroPromoLayer.cpp" />
+    <ClCompile Include="..\Classes\Card\MDHerosFormationLayer.cpp" />
+    <ClCompile Include="..\Classes\Chat\ChatLayer.cpp" />
+    <ClCompile Include="..\Classes\Common\GlobalData.cpp" />
+    <ClCompile Include="..\Classes\Common\MainLayerBase.cpp" />
+    <ClCompile Include="..\Classes\Common\MDMessageCenter.cpp" />
+    <ClCompile Include="..\Classes\Friends\AddFriendScene.cpp" />
+    <ClCompile Include="..\Classes\Friends\FriendListScene.cpp" />
+    <ClCompile Include="..\Classes\Login\CharacterScene.cpp" />
+    <ClCompile Include="..\Classes\Login\LoginScene.cpp" />
+    <ClCompile Include="..\Classes\Login\RegisterScene.cpp" />
+    <ClCompile Include="..\Classes\Login\ServerListScene.cpp" />
+    <ClCompile Include="..\Classes\Login\ThirdLoginScene.cpp" />
+    <ClCompile Include="..\Classes\Mail\MailListScene.cpp" />
+    <ClCompile Include="..\Classes\Mail\MailMainScene.cpp" />
+    <ClCompile Include="..\Classes\Mail\NewMailScene.cpp" />
+    <ClCompile Include="..\Classes\Mail\SysMailListScene.cpp" />
+    <ClCompile Include="..\Classes\MainGameScene.cpp" />
+    <ClCompile Include="..\Classes\main\MainInnerLayer.cpp" />
+    <ClCompile Include="..\Classes\main\MainOuterLayer.cpp" />
+    <ClCompile Include="..\Classes\Other\AboutScene.cpp" />
+    <ClCompile Include="..\Classes\Other\MDCatalogueLayer.cpp" />
+    <ClCompile Include="..\Classes\Other\MDSettingLayer.cpp" />
+    <ClCompile Include="..\Classes\Package\MDPackageLayer.cpp" />
+    <ClCompile Include="..\Classes\Task\MDTaskBoxLayer.cpp" />
+    <ClCompile Include="..\Classes\Task\TaskDetailScene.cpp" />
+    <ClCompile Include="..\Classes\Task\TaskListScene.cpp" />
+    <ClCompile Include="..\Classes\Task\TaskRewardScene.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCActivityIndicator\CCActivityIndicator.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCGestureRecognizer\CCGestureRecognizer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCGestureRecognizer\CCLongPressGestureRecognizer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCGestureRecognizer\CCPanGestureRecognizer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCGestureRecognizer\CCPinchGestureRecognizer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCGestureRecognizer\CCSwipeGestureRecognizer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCGestureRecognizer\CCTapGestureRecognizer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCMessageDialog.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCMultiColumnTableView.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCProgressLayer\CCProgressLayer.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCShake.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\CCTabView.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\EllipseActionInterval.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\LoadingScene.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\MDProgressBar.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\SharpLabelTTF.cpp" />
+    <ClCompile Include="..\Classes\UILibrary\SlidingMenu.cpp" />
+    <ClCompile Include="..\library\ccnet\inetaddress.cpp" />
+    <ClCompile Include="..\library\ccnet\netbean.cpp" />
+    <ClCompile Include="..\library\ccnet\socket.cpp" />
+    <ClCompile Include="..\library\ccnet\stream.cpp" />
+    <ClCompile Include="..\library\gloox\adhoc.cpp" />
+    <ClCompile Include="..\library\gloox\amp.cpp" />
+    <ClCompile Include="..\library\gloox\annotations.cpp" />
+    <ClCompile Include="..\library\gloox\atomicrefcount.cpp" />
+    <ClCompile Include="..\library\gloox\attention.cpp" />
+    <ClCompile Include="..\library\gloox\base64.cpp" />
+    <ClCompile Include="..\library\gloox\bookmarkstorage.cpp" />
+    <ClCompile Include="..\library\gloox\capabilities.cpp" />
+    <ClCompile Include="..\library\gloox\chatstate.cpp" />
+    <ClCompile Include="..\library\gloox\chatstatefilter.cpp" />
+    <ClCompile Include="..\library\gloox\client.cpp" />
+    <ClCompile Include="..\library\gloox\clientbase.cpp" />
+    <ClCompile Include="..\library\gloox\component.cpp" />
+    <ClCompile Include="..\library\gloox\compressiondefault.cpp" />
+    <ClCompile Include="..\library\gloox\compressionzlib.cpp" />
+    <ClCompile Include="..\library\gloox\connectionbosh.cpp" />
+    <ClCompile Include="..\library\gloox\connectionhttpproxy.cpp" />
+    <ClCompile Include="..\library\gloox\connectionsocks5proxy.cpp" />
+    <ClCompile Include="..\library\gloox\connectiontcpbase.cpp" />
+    <ClCompile Include="..\library\gloox\connectiontcpclient.cpp" />
+    <ClCompile Include="..\library\gloox\connectiontcpserver.cpp" />
+    <ClCompile Include="..\library\gloox\connectiontls.cpp" />
+    <ClCompile Include="..\library\gloox\connectiontlsserver.cpp" />
+    <ClCompile Include="..\library\gloox\dataform.cpp" />
+    <ClCompile Include="..\library\gloox\dataformfield.cpp" />
+    <ClCompile Include="..\library\gloox\dataformfieldcontainer.cpp" />
+    <ClCompile Include="..\library\gloox\dataformitem.cpp" />
+    <ClCompile Include="..\library\gloox\dataformreported.cpp" />
+    <ClCompile Include="..\library\gloox\delayeddelivery.cpp" />
+    <ClCompile Include="..\library\gloox\disco.cpp" />
+    <ClCompile Include="..\library\gloox\dns.cpp" />
+    <ClCompile Include="..\library\gloox\error.cpp" />
+    <ClCompile Include="..\library\gloox\eventdispatcher.cpp" />
+    <ClCompile Include="..\library\gloox\featureneg.cpp" />
+    <ClCompile Include="..\library\gloox\flexoff.cpp" />
+    <ClCompile Include="..\library\gloox\gloox.cpp" />
+    <ClCompile Include="..\library\gloox\gpgencrypted.cpp" />
+    <ClCompile Include="..\library\gloox\gpgsigned.cpp" />
+    <ClCompile Include="..\library\gloox\inbandbytestream.cpp" />
+    <ClCompile Include="..\library\gloox\instantmucroom.cpp" />
+    <ClCompile Include="..\library\gloox\iq.cpp" />
+    <ClCompile Include="..\library\gloox\jid.cpp" />
+    <ClCompile Include="..\library\gloox\lastactivity.cpp" />
+    <ClCompile Include="..\library\gloox\linklocalclient.cpp" />
+    <ClCompile Include="..\library\gloox\linklocalmanager.cpp" />
+    <ClCompile Include="..\library\gloox\logsink.cpp" />
+    <ClCompile Include="..\library\gloox\md5.cpp" />
+    <ClCompile Include="..\library\gloox\message.cpp" />
+    <ClCompile Include="..\library\gloox\messageevent.cpp" />
+    <ClCompile Include="..\library\gloox\messageeventfilter.cpp" />
+    <ClCompile Include="..\library\gloox\messagefilter.cpp" />
+    <ClCompile Include="..\library\gloox\messagesession.cpp" />
+    <ClCompile Include="..\library\gloox\mucinvitationhandler.cpp" />
+    <ClCompile Include="..\library\gloox\mucmessagesession.cpp" />
+    <ClCompile Include="..\library\gloox\mucroom.cpp" />
+    <ClCompile Include="..\library\gloox\mutex.cpp" />
+    <ClCompile Include="..\library\gloox\nickname.cpp" />
+    <ClCompile Include="..\library\gloox\nonsaslauth.cpp" />
+    <ClCompile Include="..\library\gloox\oob.cpp" />
+    <ClCompile Include="..\library\gloox\parser.cpp" />
+    <ClCompile Include="..\library\gloox\prep.cpp" />
+    <ClCompile Include="..\library\gloox\presence.cpp" />
+    <ClCompile Include="..\library\gloox\privacyitem.cpp" />
+    <ClCompile Include="..\library\gloox\privacymanager.cpp" />
+    <ClCompile Include="..\library\gloox\privatexml.cpp" />
+    <ClCompile Include="..\library\gloox\pubsubevent.cpp" />
+    <ClCompile Include="..\library\gloox\pubsubitem.cpp" />
+    <ClCompile Include="..\library\gloox\pubsubmanager.cpp" />
+    <ClCompile Include="..\library\gloox\receipt.cpp" />
+    <ClCompile Include="..\library\gloox\registration.cpp" />
+    <ClCompile Include="..\library\gloox\rosteritem.cpp" />
+    <ClCompile Include="..\library\gloox\rostermanager.cpp" />
+    <ClCompile Include="..\library\gloox\search.cpp" />
+    <ClCompile Include="..\library\gloox\sha.cpp" />
+    <ClCompile Include="..\library\gloox\shim.cpp" />
+    <ClCompile Include="..\library\gloox\simanager.cpp" />
+    <ClCompile Include="..\library\gloox\siprofileft.cpp" />
+    <ClCompile Include="..\library\gloox\socks5bytestream.cpp" />
+    <ClCompile Include="..\library\gloox\socks5bytestreammanager.cpp" />
+    <ClCompile Include="..\library\gloox\socks5bytestreamserver.cpp" />
+    <ClCompile Include="..\library\gloox\softwareversion.cpp" />
+    <ClCompile Include="..\library\gloox\stanza.cpp" />
+    <ClCompile Include="..\library\gloox\stanzaextensionfactory.cpp" />
+    <ClCompile Include="..\library\gloox\subscription.cpp" />
+    <ClCompile Include="..\library\gloox\tag.cpp" />
+    <ClCompile Include="..\library\gloox\tlsdefault.cpp" />
+    <ClCompile Include="..\library\gloox\tlsgnutlsbase.cpp" />
+    <ClCompile Include="..\library\gloox\tlsgnutlsclient.cpp" />
+    <ClCompile Include="..\library\gloox\tlsgnutlsclientanon.cpp" />
+    <ClCompile Include="..\library\gloox\tlsgnutlsserveranon.cpp" />
+    <ClCompile Include="..\library\gloox\tlsopensslbase.cpp" />
+    <ClCompile Include="..\library\gloox\tlsopensslclient.cpp" />
+    <ClCompile Include="..\library\gloox\tlsopensslserver.cpp" />
+    <ClCompile Include="..\library\gloox\tlsschannel.cpp" />
+    <ClCompile Include="..\library\gloox\uniquemucroom.cpp" />
+    <ClCompile Include="..\library\gloox\util.cpp" />
+    <ClCompile Include="..\library\gloox\vcard.cpp" />
+    <ClCompile Include="..\library\gloox\vcardmanager.cpp" />
+    <ClCompile Include="..\library\gloox\vcardupdate.cpp" />
+    <ClCompile Include="..\library\gloox\xhtmlim.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\Array.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\Convert.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\Escaper.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\IndentCanceller.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\Indenter.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\Object.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\SolidusEscaper.cpp" />
+    <ClCompile Include="..\library\JsonBox\src\Value.cpp" />
+    <ClCompile Include="..\library\jsonconverter\CCJSONConverter.cpp" />
+    <ClCompile Include="..\library\jsonconverter\cJSON.c" />
+    <ClCompile Include="..\library\XmlParser\XmlParser.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
